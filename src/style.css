@@ -1,0 +1,197 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 1rem;
+  font-family: system-ui, sans-serif;
+  color: black;
+  background-color: white;
+}
+
+h1 {
+  font-weight: 800;
+  font-size: 1.5rem;
+}
+
+/* 头部基本信息 */
+.MediaLayout-BaseInfo {
+  width: 100%;
+  background: #f8faff;
+  padding: 10px 8px;
+  border: 1px solid #d6e4ff;
+  height: 45px;
+}
+
+/* 左侧元素列表 */
+.MediaLayout-EleList {
+  padding: 8px 16px;
+  height: 100%;
+  background: #fbfcfe;
+  overflow: auto;
+  border-left: 1px solid #d6e4ff;
+  border-right: 1px solid #d6e4ff;
+  border-bottom: 1px solid #d6e4ff;
+}
+.MediaLayout-EleList-EleItem {
+  display: flex;
+  padding: 4px 8px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-bottom: 4px;
+}
+.MediaLayout-EleList-EleItem.selected {
+  background: #d6e4ff;
+  border: 1px solid #85a5ff;
+}
+
+.MediaLayout-EleList-EleItem:hover {
+  background: #d6e4ff;
+  border: 1px solid #85a5ff;
+}
+.MediaLayout-EleList-EleItem__handler {
+  display: none;
+}
+.MediaLayout-EleList-EleItem:hover .MediaLayout-EleList-EleItem__handler {
+  display: block;
+}
+.MediaLayout-EleList-EleItem__title {
+  flex: 1;
+}
+.MediaLayout-EleList-EleItem__icon {
+  margin-right: 4px;
+}
+
+/* 属性区域 */
+.MediaLayout-ElePropPanel {
+  height: 100%;
+  background: #fbfcfe;
+  border-left: 1px solid #d6e4ff;
+  border-right: 1px solid #d6e4ff;
+  border-bottom: 1px solid #d6e4ff;
+}
+.MediaLayout-ElePropPanel__Title {
+  padding: 10px 8px;
+  height: 45px;
+  background: #f4f6fa;
+  border-top: 1px solid #d6e4ff;
+  border-right: 1px solid #d6e4ff;
+  border-bottom: 1px solid #d6e4ff;
+}
+.MediaLayout-ElePropPanel__Conetnt {
+  margin-top: 16px;
+}
+
+.MediaLayout-ElePropPanel-FilesBox {
+  border: 1px solid #d6e4ff;
+  margin: 16px;
+}
+.MediaLayout-ElePropPanel-FilesBox__Header .ant-radio-group {
+  text-align: center;
+  padding: 8px;
+  background: #f4f6fa;
+  border-bottom: 1px solid #d6e4ff;
+}
+.MediaLayout-ElePropPanel-FilesBox__List {
+  max-height: 100%;
+  overflow: auto;
+}
+.MediaLayout-ElePropPanel-FilesBox__List li {
+  padding: 4px 8px;
+}
+
+.MediaLayout-ElePropPanel .ant-form-item {
+  margin-bottom: 8px;
+}
+.MediaLayout-ElePropPanel {
+  height: 100%;
+}
+
+/* 拖拽元素区域 */
+.MediaLayout-EleSource {
+  height: 100%;
+  display: flex;
+}
+.DragItem {
+  height: 48px;
+  width: 48px;
+  cursor: pointer;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto 0 auto 16px;
+}
+.DragItem:hover {
+  background-color: #d9e6ff40;
+  box-shadow: 0.4px 0.4px 0.7px rgb(0 0 0 / 4%),
+    1.3px 1.3px 2.2px rgb(0 0 0 / 6%), 4px 4px 10px rgb(0 0 0 / 10%);
+}
+/* 元素画布 */
+.MediaLayout-EleCanvas {
+  width: 100%;
+  height: 100%;
+  background-color: #121e41;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.MediaLayout-EleCanvas video {
+  width: 100%;
+}
+.MediaLayout-EleCanvas-PreviewBox {
+  background-color: #1c2c5c;
+  border: 2px dashed #faf9df38;
+  position: relative;
+}
+.GridEle {
+  color: #fff;
+  border: 1px dashed #90a19e;
+  box-sizing: border-box;
+  user-select: none;
+}
+.GridEle.selected {
+  border: 2px solid #ffe96d;
+  border-radius: 2px;
+}
+.GridEle .GridEle-LabelContainer {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.GridEle-LabelContainer {
+  width: 100%;
+  height: 100%;
+}
+
+.GridEle-LabelContainer .ant-carousel {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+audio {
+  width: 100%;
+  height: 32px;
+  margin: 4px 0;
+  background: #f1f3f4;
+}
+
+/* 缩放手柄 */
+.react-resizable-handle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  bottom: 0;
+  right: 0;
+  background: url('./assets/resize.svg');
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  box-sizing: border-box;
+  cursor: se-resize;
+  padding: 0 2px 2px 0;
+}
