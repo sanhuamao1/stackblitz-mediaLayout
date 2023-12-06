@@ -1,3 +1,5 @@
-# stackblitz-mediaLayout
-
-[Edit in Codeflow ⚡️](https://stackblitz.com/~/github.com/sanhuamao1/stackblitz-mediaLayout)
+# 使用
+```
+npm install
+npm run start
+```

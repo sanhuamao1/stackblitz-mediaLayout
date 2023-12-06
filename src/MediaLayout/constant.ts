@@ -42,3 +42,5 @@ export const GridDefault = {
   video: MEDIA,
   caption: CAPTION,
 };
+
+export const FILE_PATH=''

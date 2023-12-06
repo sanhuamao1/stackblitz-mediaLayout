@@ -1,3 +1,4 @@
+// @ts-nocheck
 const defaultSize = {
   width: 32,
   height: 32,

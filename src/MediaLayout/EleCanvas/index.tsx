@@ -1,19 +1,18 @@
-import React, { useRef } from 'react';
+// @ts-nocheck
+import  { forwardRef, useRef } from 'react';
 import useContextHandler from '../useContextHandler';
-import { GridLayout } from 'react-grid-layout-next';
-// const ResponsiveGridLayout = WidthProvider(RGL);
+import GridLayout from 'react-grid-layout';
 import {
   generateGridEles,
   getUuidFromLayoutEleKey,
   TxtUtil,
-  CaptionUtil,
   FormatEleProps,
 } from '../helper';
 import { deepClone, getUuid, FloatFormater } from '../../utils';
 import { GridDefault } from '../constant';
 import { useDrop } from 'ahooks';
 
-const EleCanvas = React.forwardRef((_, ref) => {
+const EleCanvas = forwardRef((_, ref) => {
   let {
     viewSize,
     widthRatio,
@@ -65,7 +64,7 @@ const EleCanvas = React.forwardRef((_, ref) => {
 
   // 画布内拖拽
   const handleMove = (prop) => {
-    const targetItem = prop.item;
+    const [targetItem] = prop;
     const layoutUuid = getUuidFromLayoutEleKey(targetItem.i);
     const idx = eleList.findIndex((ele) => ele.uuid === layoutUuid);
     if (idx !== -1) {
@@ -81,9 +80,12 @@ const EleCanvas = React.forwardRef((_, ref) => {
 
   // 伸缩
   const handleResizeEle = (prop) => {
-    const targetItem = prop.item;
+    const [targetItem] = prop;
+    console.log(targetItem)
     const layoutUuid = getUuidFromLayoutEleKey(targetItem.i);
     const idx = eleList.findIndex((ele) => ele.uuid === layoutUuid);
+    console.log(layoutUuid)
+
     if (idx !== -1) {
       setSelectedEleKey(layoutUuid);
       const newEle = deepClone(eleList[idx]) as TEleWithLayout;
@@ -117,7 +119,6 @@ const EleCanvas = React.forwardRef((_, ref) => {
             style={containerStyle}
             compactType={null} 
             allowOverlap={true}
-            // onLayoutChange={handleChangeLayout}
             onDragStop={handleMove}
             onResizeStop={handleResizeEle}
             isBounded={true} // 防止出界

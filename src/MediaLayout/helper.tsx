@@ -13,6 +13,7 @@ import { ReactNode } from 'react';
 import VideoPlayer from './EleCanvas/VideoPlayer';
 import SvgIcon from '../assets/SvgIcon';
 import Marquee from 'react-fast-marquee';
+import { FILE_PATH } from './constant'
 
 // 字幕相关方法
 export const CaptionUtil = {
@@ -81,7 +82,7 @@ export const FormatEleProps = (ele: TEle, baseInfo: TBaseInfo) => {
 };
 
 // 根据原始数据生成elelist
-export const generateEleList = (eles: TEleList, program: TBaseInfo) => {
+export const generateEleList = (eles: any, program: TBaseInfo) => {
   return eles.map((item) => {
     const newItem = { ...item, uuid: getUuid() };
 
@@ -295,7 +296,7 @@ const getGridEleLabel = (ele: TEle, { widthRatio }) => {
           {(ele as TMediaEle).files.map((file) => (
             <div key={file.id}>
               <img
-                src={`http://127.0.0.1:8000/${file.path}`}
+                src={`${FILE_PATH}${file.path}`}
                 width="100%"
                 height="100%"
               />
@@ -311,14 +312,14 @@ const getGridEleLabel = (ele: TEle, { widthRatio }) => {
       return <VideoPlayer files={(ele as TMediaEle).files} />;
     }
     case 'caption': {
-      if (ele.direction === 0) {
+      if ((ele as TCaptionEle).direction === 0) {
         return <span style={style}>{(ele as TCaptionEle).content}</span>;
       }
       return (
         <Marquee
           style={style}
-          direction={ele.direction === 1 ? 'left' : 'right'}
-          speed={ele.speed}
+          direction={(ele as TCaptionEle).direction === 1 ? 'left' : 'right'}
+          speed={(ele as TCaptionEle).speed}
         >
           {(ele as TCaptionEle).content}
         </Marquee>

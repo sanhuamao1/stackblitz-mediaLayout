@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Form, Input, InputNumber } from 'antd';
 import { memo } from 'react';
 import useContextHandler from '../useContextHandler';

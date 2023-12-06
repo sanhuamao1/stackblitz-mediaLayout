@@ -1,6 +1,7 @@
 import EleItem from './EleItem';
 import useContextHandler from '../useContextHandler';
 import { useState } from 'react';
+import { FILE_PATH } from '../constant'
 
 type AudioProps = {
   files: Array<TFile>;
@@ -31,7 +32,7 @@ const EleList = () => {
       {/* 下面的地址是我配置的apache地址， */}
       {audio.isPlaying && (
         <audio
-          src={`http://127.0.0.1:8000/${audio.files[0].path}`}
+          src={`${FILE_PATH}${audio.files[0].path}`}
           autoPlay
           style={{
             width: '100%',

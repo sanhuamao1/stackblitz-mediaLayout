@@ -1,5 +1,6 @@
 import { Playlist } from 'reactjs-video-playlist-player';
 import { useState, useRef } from 'react';
+import { FILE_PATH } from '../constant'
 
 const VideoPlayer = ({ files }) => {
   const [currentVideo, setCurrentVideo] = useState(0);
@@ -7,7 +8,7 @@ const VideoPlayer = ({ files }) => {
 
   const videos = files.map((file) => ({
     thumbnail: '',
-    url: `http://127.0.0.1:8000/${file.path}`,
+    url: `${FILE_PATH}${file.path}`,
     imgAlt: '',
   }));
 
