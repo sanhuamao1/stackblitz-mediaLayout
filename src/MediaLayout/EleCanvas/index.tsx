@@ -57,14 +57,14 @@ const EleCanvas = forwardRef((_, ref) => {
         }
 
         eleList.push(newItem);
+        setSelectedEleKey(newItem.uuid);
         setEleList(() => [...eleList]);
       }
     },
   });
 
   // 画布内拖拽
-  const handleMove = (prop) => {
-    const [targetItem] = prop;
+  const handleMove = (l,o,targetItem) => {
     const layoutUuid = getUuidFromLayoutEleKey(targetItem.i);
     const idx = eleList.findIndex((ele) => ele.uuid === layoutUuid);
     if (idx !== -1) {
@@ -79,13 +79,10 @@ const EleCanvas = forwardRef((_, ref) => {
   };
 
   // 伸缩
-  const handleResizeEle = (prop) => {
-    const [targetItem] = prop;
-    console.log(targetItem)
+  const handleResizeEle = (l,o,targetItem) => {
     const layoutUuid = getUuidFromLayoutEleKey(targetItem.i);
     const idx = eleList.findIndex((ele) => ele.uuid === layoutUuid);
-    console.log(layoutUuid)
-
+    console.log(targetItem,idx)
     if (idx !== -1) {
       setSelectedEleKey(layoutUuid);
       const newEle = deepClone(eleList[idx]) as TEleWithLayout;
@@ -102,6 +99,7 @@ const EleCanvas = forwardRef((_, ref) => {
     setEleList([...eleList]);
   };
 
+  console.log(showedEles)
   return (
     <div className="MediaLayout-EleCanvas" ref={ref}>
       <div

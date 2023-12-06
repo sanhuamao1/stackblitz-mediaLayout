@@ -7,7 +7,7 @@ const themeColor = '#8994dc';
 const Time = ({ width = defaultSize.width, height = defaultSize.height }) => (
   <svg
     t="1701242453411"
-    class="icon"
+    className="icon"
     viewBox="0 0 1024 1024"
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
@@ -57,7 +57,7 @@ const Time = ({ width = defaultSize.width, height = defaultSize.height }) => (
 const Date = ({ width = defaultSize.width, height = defaultSize.height }) => (
   <svg
     t="1701242139643"
-    class="icon"
+    className="icon"
     viewBox="0 0 1024 1024"
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
@@ -92,7 +92,7 @@ const Date = ({ width = defaultSize.width, height = defaultSize.height }) => (
 const Week = ({ width = defaultSize.width, height = defaultSize.height }) => (
   <svg
     t="1701241879543"
-    class="icon"
+    className="icon"
     viewBox="0 0 1024 1024"
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
@@ -151,7 +151,7 @@ const Week = ({ width = defaultSize.width, height = defaultSize.height }) => (
 const Image = ({ width = defaultSize.width, height = defaultSize.height }) => (
   <svg
     t="1701243109162"
-    class="icon"
+    className="icon"
     viewBox="0 0 1024 1024"
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
@@ -175,7 +175,7 @@ const Image = ({ width = defaultSize.width, height = defaultSize.height }) => (
 const Video = ({ width = defaultSize.width, height = defaultSize.height }) => (
   <svg
     t="1701243826704"
-    class="icon"
+    className="icon"
     viewBox="0 0 1024 1024"
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
@@ -218,7 +218,7 @@ const Caption = ({
   return (
     <svg
       t="1701249987867"
-      class="icon"
+      className="icon"
       viewBox="0 0 1024 1024"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
