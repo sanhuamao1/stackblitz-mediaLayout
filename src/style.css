@@ -40,6 +40,7 @@ h1 {
   cursor: pointer;
   border-radius: 4px;
   margin-bottom: 4px;
+  align-items: center;
 }
 .MediaLayout-EleList-EleItem.selected {
   background: #d6e4ff;
